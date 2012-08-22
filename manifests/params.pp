@@ -9,6 +9,7 @@ class git::params {
         'Hardy', 'Lucid': { $packages = 'git-core' }
         default: { $packages = 'git' }
       }
+    }
     'SLES', 'Ubuntu', 'RedHat', 'Fedora': { $packages = 'git' }
     'FreeBSD': { $packages = 'devel/git' }
     default:   { fail("No git package known for operating system ${operatingsystem}") }
