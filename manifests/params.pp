@@ -10,7 +10,7 @@ class git::params {
         default: { $packages = 'git' }
       }
     }
-    'SLES', 'Ubuntu', 'RedHat', 'Fedora': { $packages = 'git' }
+   'CentOS', 'SLES', 'Ubuntu', 'RedHat', 'Fedora': { $packages = 'git' }
     'FreeBSD': { $packages = 'devel/git' }
     default:   { fail("No git package known for operating system ${operatingsystem}") }
   }
