@@ -14,7 +14,6 @@ class git::params {
     'FreeBSD': { $packages = 'devel/git' }
     'Darwin': {
       $packages = 'git'
-      $sources = "https://git-osx-installer.googlecode.com/files/git-1.8.3.2-intel-universal-snow-leopard.dmg"
       file { '/usr/local/bin':
         ensure => directory,
         require => Package[$git::params::packages],
