@@ -5,5 +5,6 @@ class git {
 
   package { $git::params::packages:
     ensure => present,
+    source => $git::oarams::sources,
   }
 }
