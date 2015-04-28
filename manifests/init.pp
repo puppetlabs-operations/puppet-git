@@ -5,8 +5,13 @@ class git (
 
   include git::params
 
+  case $::operatingsystem {
+    'Darwin': { $source = $sources }
+    default: { $source = undef }
+  }
+
   package { $git::params::packages:
     ensure => present,
-    source => $sources,
+    source => $source
   }
 }
