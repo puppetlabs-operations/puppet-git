@@ -1,11 +1,11 @@
 # = Class: git::params
 #
 class git::params {
-  case $operatingsystem {
+  case $::operatingsystem {
     'Debian': { $packages = 'git' }
     'Ubuntu': { $packages = 'git-core' }
     'Ubuntu': {
-      case $operatingsystemrelease {
+      case $::operatingsystemrelease {
         'Hardy', 'Lucid': { $packages = 'git-core' }
         default: { $packages = 'git' }
       }
@@ -24,6 +24,6 @@ class git::params {
         require => File['/usr/local/bin'],
       }
     }
-    default:   { fail("No git package known for operating system ${operatingsystem}") }
+    default:   { fail("No git package known for operating system ${::operatingsystem}") }
   }
 }
