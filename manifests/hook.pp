@@ -7,7 +7,7 @@ define git::hook (
 
   file { "${git_dir}/hooks/${hook}":
     owner   => $owner,
-    mode    => 700,
+    mode    => '0700',
     content => $content,
   }
 
